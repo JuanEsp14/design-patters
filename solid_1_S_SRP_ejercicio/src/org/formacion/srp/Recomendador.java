@@ -13,7 +13,7 @@ public class Recomendador {
 		for (Pelicula favorita: cliente.getFavoritas()) {
 			recomendadas.addAll(BBDD.PELIS_POR_DIRECTOR.get(favorita.getDirector()));
 		}
-		//recomendadas.removeAll(cliente.getFavoritas());
+		recomendadas.removeAll(cliente.getFavoritas());
 		
 		return recomendadas;
 	}
@@ -21,7 +21,7 @@ public class Recomendador {
 	public String recomendacionesCSV (Cliente cliente) {
 		
 		return recomendaciones(cliente).stream()
-		      .map(p -> (p.getTitulo() + "," + p.getGenero() + "," + p.getDirector()))
+		      .map(p -> (p.getTitulo() + "," + p.getDirector() + "," + p.getGenero()))
 		      .collect(Collectors.joining("\n"));
 	}
 }
