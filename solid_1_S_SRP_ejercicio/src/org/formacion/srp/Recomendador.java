@@ -2,7 +2,6 @@ package org.formacion.srp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Recomendador {
 
@@ -16,12 +15,5 @@ public class Recomendador {
 		recomendadas.removeAll(cliente.getFavoritas());
 		
 		return recomendadas;
-	}
-	
-	public String recomendacionesCSV (Cliente cliente) {
-		
-		return recomendaciones(cliente).stream()
-		      .map(p -> (p.getTitulo() + "," + p.getDirector() + "," + p.getGenero()))
-		      .collect(Collectors.joining("\n"));
 	}
 }

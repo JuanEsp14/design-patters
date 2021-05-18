@@ -19,7 +19,7 @@ public class TestRecomendador {
 	
 	@Test 
 	public void test_formato() {
-		Recomendador r = new Recomendador();
+		ExportadorCSV r = new ExportadorCSV();
 		
 		String csv = r.recomendacionesCSV(BBDD.JUAN);
 		
