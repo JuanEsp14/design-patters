@@ -20,8 +20,8 @@ public class TestGeneradorPrimos {
 
 	@Test
 	public void test_orden_inverso() {
-		
-		GeneradorPrimos generador = new GeneradorPrimos();
+
+		GeneradorPrimos generador = new OrdenInverso();
 		List<Integer> expected = Arrays.asList(13,11,7,5,3,2);
 		
 		Assert.assertThat(generador.primos(15), is(expected));

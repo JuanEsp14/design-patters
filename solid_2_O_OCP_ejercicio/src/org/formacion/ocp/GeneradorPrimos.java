@@ -1,12 +1,14 @@
 package org.formacion.ocp;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class GeneradorPrimos {
+public  class GeneradorPrimos {
 
 	
-	public List<Integer> primos (int limit) {
+	public List<Integer> primos(int limit) {
 		
 		List<Integer> primos = new ArrayList<>();
 		for (int i = 2; i < limit; i++) {
@@ -14,8 +16,8 @@ public class GeneradorPrimos {
 				primos.add(i);
 			}
 		}
+		Collections.sort(primos, getOrder());
 		return primos;
-
 	}
 	
 	private boolean esPrimo (int candidato) {
@@ -24,7 +26,10 @@ public class GeneradorPrimos {
 				return false;
 			}
 		}
-		
 		return true;
+	}
+
+	protected Comparator<Integer> getOrder(){
+		return (a, b) -> a > b ? 1 : -1;
 	}
 }
