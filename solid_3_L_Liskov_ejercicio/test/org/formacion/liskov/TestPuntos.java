@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TestPuntos {
 
-	private final Punto2D referencia = new Punto2D(3,5);
+	private final Punto2D referencia = new Punto3D(3,5, 1);
 	private final List<Punto2D> puntos_prueba = Arrays.asList(
 			                                         new Punto2D(2,3), 
 			                                         new Punto2D(3,5), 
@@ -21,7 +21,7 @@ public class TestPuntos {
 		
 		for (Punto2D punto: puntos_prueba) {
 			Assert.assertEquals("test para " + referencia + " y " + punto,
-					             referencia.equals(punto), 
+					             referencia.equals(punto),
 					             referencia.distancia(punto) == 0);
 		}
 	}
