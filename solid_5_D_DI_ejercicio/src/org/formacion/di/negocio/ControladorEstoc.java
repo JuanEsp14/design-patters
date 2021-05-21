@@ -4,7 +4,7 @@ import org.formacion.di.bbdd.InventarioBBDD;
 
 public class ControladorEstoc {
 
-	private final InventarioBBDD inventario;
+	private final InventarioInterface inventario;
 	
 	public ControladorEstoc(InventarioBBDD inventario) {
 		this.inventario = inventario;
@@ -19,7 +19,7 @@ public class ControladorEstoc {
 	 */
 	public boolean necesitaReponer (String tienda, String producto) {
 		int cantidadActual = inventario.numeroProductos(tienda, producto);
-		
+
 		return  cantidadActual < producto.length() * 100;
 	}
 
