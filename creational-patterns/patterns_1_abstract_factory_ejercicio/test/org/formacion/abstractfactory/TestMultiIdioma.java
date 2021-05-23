@@ -8,28 +8,24 @@ public class TestMultiIdioma {
 
 	@Test
 	public void test_es() {
-		Preguntas preguntas = new PreguntasEs();
+		Espanol espanol = new Espanol();
 		
-		assertEquals("¿qué hora es?", preguntas.preguntaHora() );
-		assertEquals("¿qué tiempo hace?", preguntas.preguntaTiempo() );
+		assertEquals("¿qué hora es?", espanol.preguntas().preguntaHora() );
+		assertEquals("¿qué tiempo hace?", espanol.preguntas().preguntaTiempo() );
 		
-		Saludos saludos = new SaludosEs();
-		
-		assertEquals("buenos días", saludos.buenosDias());
-		assertEquals("buenas tardes", saludos.buenasTardes());
+		assertEquals("buenos días", espanol.saludos().buenosDias());
+		assertEquals("buenas tardes", espanol.saludos().buenasTardes());
 	}
 	
 	@Test
 	public void test_en() {
-		Preguntas preguntas = new PreguntasEn();
+		English english = new English();
+
+		assertEquals("what time is it?", english.preguntas().preguntaHora() );
+		assertEquals("how is the weather?", english.preguntas().preguntaTiempo() );
 		
-		assertEquals("what time is it?", preguntas.preguntaHora() );
-		assertEquals("how is the weather?", preguntas.preguntaTiempo() );
-		
-		Saludos saludos = new SaludosEn();
-		
-		assertEquals("good morning", saludos.buenosDias());
-		assertEquals("good afternoon", saludos.buenasTardes());
+		assertEquals("good morning", english.saludos().buenosDias());
+		assertEquals("good afternoon", english.saludos().buenasTardes());
 	}
 
 }
