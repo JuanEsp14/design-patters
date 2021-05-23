@@ -3,8 +3,7 @@ package org.formacion.builder;
 public class Main {
 
 	public static void main (String[] args) {
-
-		// este codigo debe compilar
+		//Este código debe compilar
 		/*
 		Persona madre = new Persona.Builder("Maria")
                 .setMunicipio("Selva")
@@ -16,13 +15,21 @@ public class Main {
                 .setMenor(4)
                 .setColegio("Colegio de Selva")
                 .build();
+
+		System.out.println(madre);
+		System.out.println(hijo);
+
 		*/
-		// esta codigo NO debe compilar
+
+		//Este código NO debe compilar
 		/*
 		Persona mal = new Persona.Builder("Luisa")
 				    .setMayor(20)
 				    .setColegio("Colegio de Villa Arriba")
 				    .build();
-        */
+
+		System.out.println(mal);
+		
+		 */
 	}
 }
