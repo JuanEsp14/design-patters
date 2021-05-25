@@ -55,5 +55,14 @@ public class HamburguesaFactory {
 		return new Hamburguesa ( Carne.VACUNO, Size.EXTRA_GRANDE, Pan.NORMAL, Extra.CEBOLLA, Extra.HUEVO);
 	}
 
+	public static HamburguesaFactory from (Hamburguesa plantilla) {
+		HamburguesaFactory factory = new HamburguesaFactory();
+		factory.carne = plantilla.getCarne();
+		factory.pan = plantilla.getPan();
+		factory.size = plantilla.getSize();
+		factory.extras.addAll(plantilla.getExtras());
+		return factory;
+	}
+
 
 }
