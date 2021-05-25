@@ -5,13 +5,20 @@ public abstract class Lavadora {
 	protected boolean tieneTambor;
 	protected boolean tieneMandos;
 	protected String  tipoCarga;
-	
-	public void ponerTambor() {
-		tieneTambor = true;
+
+	public Lavadora(){
+		this.tipoCarga = tipoCarga();
+		this.ponerMandos();
+		this.ponerTambor();
 	}
 	
-	public void ponerMandos() {
+	private void ponerTambor() {
+		tieneTambor = true;
+	}
+
+	private void ponerMandos() {
 		tieneMandos = true;
 	}
 
+	public abstract String tipoCarga();
 }
