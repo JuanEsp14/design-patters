@@ -16,10 +16,7 @@ public class TestBaseDatosConLogger {
 	
 	@Before
 	public void init() {
-		
-		// construir un LoggerDecorator usando la base de datos sinLogger y el
-		// logger
-		bbdd = null;
+		bbdd = new LoggerDecorator(logger, sinLogger);
 	}
 	
 	
